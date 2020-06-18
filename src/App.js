@@ -1,14 +1,13 @@
-import React, { Component } from "react";
+import React, { Component, Suspense, lazy } from "react";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { getCharacthers } from "./services/getCharacthers";
-import CardList from "./components/CardList";
-
+import Form from "./components/Form"
 export default class App extends Component {
   INITIAL_PAGE = 1;
   state = {
     page: this.INITIAL_PAGE,
-    data: { loading: true, characters: [] },
+    data: { characters: [] },
     keyword: "",
   };
 
@@ -28,30 +27,24 @@ export default class App extends Component {
   }
 
   handleNextPagination = () => {
-    this.setState(
-      { page: this.state.page + 1, data: { loading: true } },
-      function () {
-        let { page, keyword } = this.state;
-        let promises = getCharacthers(page, keyword);
-        promises.then((res) => {
-          this.setState({
-            data: {
-              loading: false,
-              characters: res,
-            },
-          });
+    this.setState({ page: this.state.page + 1 }, function () {
+      let { page, keyword } = this.state;
+      let promises = getCharacthers(page, keyword);
+      promises.then((res) => {
+        this.setState({
+          data: {
+            loading: false,
+            characters: res,
+          },
         });
-      }
-    );
+      });
+    });
   };
 
   handelOnChange = (e) => {
     this.setState(
       {
         keyword: e.target.value,
-        data: {
-          loading: true,
-        },
       },
       function () {
         let { page, keyword } = this.state;
@@ -68,28 +61,17 @@ export default class App extends Component {
     );
   };
 
-  conditionalRender = () => {
-    let { loading, characters } = this.state.data;
-    if (loading) {
-      return (
-        <div>
-          <h1>Loading...</h1>
-        </div>
-      );
-    } else {
-      return (
-        <div>
-          <CardList characters={characters} />
-        </div>
-      );
-    }
-  };
+  // shouldComponentUpdate(nextProps, nextState) {
+  //   console.log("shouldComponentUpdate", nextProps, nextState);
+  //   return true
+  // }
+
 
   render() {
-    // console.log("render");
-    let msg = this.conditionalRender();
+    const CardList = lazy(() => import("./components/CardList"));
     return (
       <div className="App">
+      <Form page={this.state.page}/>
         <div>
           <button
             style={{ width: "100%", marginBottom: "5em", height: "3em" }}
@@ -107,7 +89,14 @@ export default class App extends Component {
               value={this.state.keyword}
             />
           </div>
-          {msg}
+          <div>
+            <Suspense fallback={<h1>Loading...</h1>}>
+              <CardList
+                className="cardlist"
+                characters={this.state.data.characters}
+              />
+            </Suspense>
+          </div>
         </div>
       </div>
     );
