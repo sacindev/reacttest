@@ -2,7 +2,7 @@ import React, { Component, Suspense, lazy } from "react";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { getCharacthers } from "./services/getCharacthers";
-import Form from "./components/Form"
+import Form from "./components/Form";
 export default class App extends Component {
   INITIAL_PAGE = 1;
   state = {
@@ -66,15 +66,14 @@ export default class App extends Component {
   //   return true
   // }
 
-
   render() {
     const CardList = lazy(() => import("./components/CardList"));
     return (
       <div className="App">
-      <Form page={this.state.page}/>
+        <Form page={this.state.page} />
         <div>
           <button
-            style={{ width: "100%", marginBottom: "5em", height: "3em" }}
+            style={{ width: "30%", margin: "1em 0" }}
             type="button"
             onClick={this.handleNextPagination}
           >
@@ -84,7 +83,7 @@ export default class App extends Component {
             <input
               onChange={this.handelOnChange}
               placeholder="Search"
-              style={{ width: "80%", marginBottom: "5em", height: "3em" }}
+              style={{ width: "60%", margin: "1em 0" }}
               type="text"
               value={this.state.keyword}
             />
