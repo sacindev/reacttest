@@ -36,3 +36,7 @@
     transform: rotate(360deg);
   }
 }
+
+.animate__animated.animate__jackInTheBox {
+  --animate-duration: 1s;
+}

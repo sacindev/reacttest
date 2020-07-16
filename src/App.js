@@ -2,7 +2,9 @@ import React, { Component, Suspense, lazy } from "react";
 import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { getCharacthers } from "./services/getCharacthers";
-import Form from "./components/Form"
+import Form from "./components/Form";
+import Header from "./components/Header";
+import Trash from "./components/Trash";
 export default class App extends Component {
   INITIAL_PAGE = 1;
   state = {
@@ -66,12 +68,13 @@ export default class App extends Component {
   //   return true
   // }
 
-
   render() {
     const CardList = lazy(() => import("./components/CardList"));
     return (
       <div className="App">
-      <Form page={this.state.page}/>
+        <Trash />
+        <Header />
+        <Form page={this.state.page} />
         <div>
           <button
             style={{ width: "100%", marginBottom: "5em", height: "3em" }}
