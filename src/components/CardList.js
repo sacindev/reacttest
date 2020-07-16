@@ -7,9 +7,8 @@ const CardList = ({ characters }) => {
     <div
       style={{
         display: "grid",
-        gridTemplateColumns: `repeat(auto-fit,minmax(400px, 1fr))`,
+        gridTemplateColumns: `repeat(auto-fit, minmax(400px, 1fr))`,
         gridGap: "1em",
-        width: "100%",
         justifyItems: "center",
       }}
     >
@@ -33,7 +32,15 @@ const CardList = ({ characters }) => {
               position: "relative",
             }}
           >
-            <div style={{ width: "200px" }}>
+            <div
+              style={{
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+                flexDirection: "column",
+                width:"200px"
+              }}
+            >
               <h5>Name: {item.name}</h5>
               <h5>Type: {item.type}</h5>
               <h5>Specie: {item.species}</h5>
@@ -41,12 +48,12 @@ const CardList = ({ characters }) => {
             <div
               className="image__card"
               style={{
-                height: "200px",
                 backgroundImage: `url(${item.image})`,
-                backgroundSize: "contain",
-                width: "200px",
-                backgroundRepeat: "no-repeat",
+                backgroundSize: "cover",
+                backgroundRepeat: "norepeat",
                 backgroundPosition: "center",
+                borderRadius: "0 10px 10px 0",
+                width:"200px"
               }}
             ></div>
           </div>

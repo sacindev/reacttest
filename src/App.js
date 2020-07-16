@@ -3,8 +3,11 @@ import "./App.css";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import { getCharacthers } from "./services/getCharacthers";
 import Form from "./components/Form";
+<<<<<<< HEAD
 import Header from "./components/Header";
 import Trash from "./components/Trash";
+=======
+>>>>>>> 16a7fd7fbde11bba92939cd236709865561ae27d
 export default class App extends Component {
   INITIAL_PAGE = 1;
   state = {
@@ -72,12 +75,15 @@ export default class App extends Component {
     const CardList = lazy(() => import("./components/CardList"));
     return (
       <div className="App">
+<<<<<<< HEAD
         <Trash />
         <Header />
+=======
+>>>>>>> 16a7fd7fbde11bba92939cd236709865561ae27d
         <Form page={this.state.page} />
         <div>
           <button
-            style={{ width: "100%", marginBottom: "5em", height: "3em" }}
+            style={{ width: "30%", margin: "1em 0" }}
             type="button"
             onClick={this.handleNextPagination}
           >
@@ -87,7 +93,7 @@ export default class App extends Component {
             <input
               onChange={this.handelOnChange}
               placeholder="Search"
-              style={{ width: "80%", marginBottom: "5em", height: "3em" }}
+              style={{ width: "60%", margin: "1em 0" }}
               type="text"
               value={this.state.keyword}
             />
