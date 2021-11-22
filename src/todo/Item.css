@@ -1,0 +1,25 @@
+.item_container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+}
+
+.item_title {
+
+}
+
+.item_btns {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.item_btns_container_edit {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.item_btns_container_delete {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

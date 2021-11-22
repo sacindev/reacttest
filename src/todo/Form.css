@@ -1,0 +1,67 @@
+.form_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form_field {
+  display: grid;
+}
+.form_field_label {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.form_field_input_text {
+  font-size: 1.1rem;
+  width: 21rem;
+  border-radius: 0.3rem;
+  border: 1.5px solid #676;
+  outline: none;
+  padding: 0.3rem;
+}
+
+.form_field_input_text:focus {
+  border: 1.5px solid rgb(0, 0, 0);
+  padding: 0.3rem;
+}
+
+.form_field_input_date {
+  font-size: 1.1rem;
+  width: 21rem;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  outline: none;
+  border: 1.5px solid #676;
+  
+}
+
+
+.form_field_input_textarea {
+  font-size: 1.1rem;
+  width: 21rem;
+  border-radius: 0.3rem;
+  padding: 0.3rem;
+  border: 1.5px solid #676;
+  outline: none;
+  resize: none;
+}
+
+.form_field_input_textarea:focus {
+  border: 1.5px solid rgb(0, 0, 0);
+}
+.form_field_input_btn {
+  justify-self: center;
+  margin-top: 1rem;
+  border-radius: 0px;
+}
+
+.form_btn {
+  font-weight: bold;
+  height: 2.5rem;
+  width: 7.5rem;
+  border-radius: 0.2rem;
+  background-color: aquamarine;
+  color: rgb(0, 0, 0);
+  text-transform: uppercase;
+}

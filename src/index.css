@@ -4,7 +4,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  -moz-osx-font-smoothing: grayscale; 
+  font-size: 10px;
 }
 
 code {
@@ -30,8 +31,10 @@ code {
   margin-top: 1em;
 }
 
+
+
 input[type=text]{
-  margin:0.5em;
+  margin:0px
 }
 
 input[type=checkbox]{
