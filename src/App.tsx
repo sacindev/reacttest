@@ -1,9 +1,8 @@
 import React from "react";
-import Form from "./todo/Form"; 
+import Form from "./todo/Form";
 import TaskList from "./todo/TaskList";
 
-const App: React.FC = () => {  
-  
+const App: React.FC = () => {
   return (
     <>
       <Form />
