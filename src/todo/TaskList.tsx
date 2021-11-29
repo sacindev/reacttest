@@ -18,12 +18,7 @@ const TaskList = () => {
     const idItem = event.currentTarget.id;
     const newValue = document.querySelector("inpu[name = editableItem_" + idItem);
     
-  };
-
-  const handleDelete = (event: SyntheticEvent) => {
-    const idItem = event.currentTarget.id.split("item_btn_")[1]
-     deleteOnePost(parseInt(idItem))
-  } 
+  };  
 
   return (
     <div className="tasklist_container">
