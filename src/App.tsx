@@ -1,12 +1,10 @@
 import React from "react";
-import Form from "./todo/Form";
-import TaskList from "./todo/TaskList";
+import Canvas from "./components/Canvas";
 
 const App: React.FC = () => {
   return (
     <>
-      <Form />
-      <TaskList></TaskList>
+      <Canvas />
     </>
   );
 };
